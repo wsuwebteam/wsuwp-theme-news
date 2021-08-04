@@ -33,6 +33,10 @@
 
     &-article {
         margin-bottom: $wsu-spacing--xxlarge;
+
+        .wsu-article-hero {
+            margin-bottom: 0;
+        }
     }
 
     &-article-content {
@@ -114,10 +118,11 @@
             }
 
             a::after {
-                content: '\F108';
+                content: '\F107\F107';
                 font-family: 'wsu-icons';
                 color: inherit;
                 font-size: 0.7em;
+                letter-spacing: -12px;
             }
         }
 
