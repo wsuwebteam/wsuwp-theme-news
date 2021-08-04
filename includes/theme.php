@@ -27,8 +27,8 @@ class Theme {
 		//require_once __DIR__ . '/include-media.php';
 		//require_once __DIR__ . '/templates.php';
 		require_once __DIR__ . '/scripts.php';
-		//require_once __DIR__ . '/blocks.php';
-		//require_once __DIR__ . '/customizer.php';
+		require_once __DIR__ . '/taxonomy.php';
+		require_once __DIR__ . '/query.php';
 		//require_once __DIR__ . '/menus.php';
 		//require_once __DIR__ . '/supports.php';
 		//require_once __DIR__ . '/customizer/include-customizer.php';

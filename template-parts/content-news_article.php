@@ -4,6 +4,8 @@
 		if ( have_posts() ) {
 			while ( have_posts() ) {
 				the_post();
+
+				WSUWP\Theme\News\Query::add_exclude_post( get_the_ID() );
 				//
 				WSUWP\Theme\WDS\Template::render( 'template-parts/article', get_post_type() );
 				//
