@@ -1,0 +1,20 @@
+{
+  "name": "wsuwp-theme-news",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start assets/src/blocks.js --output-path=assets/dist/",
+    "build": "wp-scripts build assets/src/blocks.js --output-path=assets/dist/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.1.0"
+  }
+}

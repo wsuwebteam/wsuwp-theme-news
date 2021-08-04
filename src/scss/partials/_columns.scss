@@ -1,0 +1,14 @@
+@import '../../assets/variables';
+
+.wsu-row--sidebar-right {
+
+    .wsu-column:first-child {
+        width: 75% !important;
+        padding-right: $wsu-spacing--large;
+    }
+
+    .wsu-column:last-child {
+        width: 25% !important;
+    }
+ 
+}

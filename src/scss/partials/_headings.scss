@@ -1,0 +1,26 @@
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.single-news_article {
+
+    h1 {
+
+        font-size: 2.5rem;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .wsu-header-article {
+        
+        h1 {
+            margin-bottom: 0.1em;
+            margin-top: 0.1em;
+        }
+
+        .wsu-social-icons {
+            margin-top: $wsu-spacing--medium;
+        }
+    }
+}

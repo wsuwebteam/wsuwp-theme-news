@@ -1,0 +1,21 @@
+@import '../../assets/variables';
+@import '../../assets/mixins';
+
+.wsu-button {
+    background-color: $wsu-color--gray-5;
+    color: $wsu-color--gray-85;
+    border: 1px solid $wsu-color--gray-20;
+    text-decoration: none;
+    padding: $wsu-spacing--xxsmall $wsu-spacing--medium;
+    text-align: center;
+
+    @include wsu-font--xsmall();
+
+    &:hover,
+    &:focus {
+        background-color: #fff;
+        color: $wsu-color--crimson;
+        border: 1px solid $wsu-color--gray-40;
+    }
+
+} 
