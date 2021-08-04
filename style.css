@@ -414,6 +414,8 @@ $zindex-tooltip:                    1080;
 
 .wsu-news-article {
   margin-bottom: 5.125rem; }
+  .wsu-news-article .wsu-article-hero {
+    margin-bottom: 0; }
 
 .wsu-news-article-content {
   padding-top: 3.125rem; }
@@ -469,10 +471,11 @@ $zindex-tooltip:                    1080;
       text-transform: uppercase;
       font-weight: 600; }
     .wsu-news-next-up h2 a::after {
-      content: '\F108';
+      content: '\F107\F107';
       font-family: 'wsu-icons';
       color: inherit;
-      font-size: 0.7em; }
+      font-size: 0.7em;
+      letter-spacing: -12px; }
   .wsu-news-next-up .wsu-news-list-item {
     margin-bottom: 0; }
     .wsu-news-next-up .wsu-news-list-item .wsu-image-frame {
