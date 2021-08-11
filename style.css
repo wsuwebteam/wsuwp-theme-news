@@ -5,7 +5,7 @@
  Author:       Washington State University, Danial Bleile
  Author URI:   http://web.wsu.edu
  Template:     wsuwp-theme-web-design-system-two
- Version:      0.0.5
+ Version:      0.0.4
  Text Domain:  wsuwpthemenews
 */
 .wsu-wrapper-content {
@@ -240,11 +240,11 @@ $zindex-tooltip:                    1080;
   .single-news_article h1::after {
     display: none; }
 
-.single-news_article .wsu-header-article h1 {
+.single-news_article .wsu-article-header h1 {
   margin-bottom: 0.1em;
   margin-top: 0.1em; }
 
-.single-news_article .wsu-header-article .wsu-social-icons {
+.single-news_article .wsu-article-header .wsu-social-icons {
   margin-top: 1.5rem; }
 
 /*
@@ -398,14 +398,14 @@ $zindex-tooltip:                    1080;
 /* ========================================================
 == Transitions ==
 ==========================================================*/
-.wsu-news-article-content p:first-child strong {
+.wsu-article-copy p:first-child strong {
   font-size: 1.25rem;
   line-height: 1.4;
   font-weight: 600; }
 
-.wsu-footer-article {
+.wsu-article-footer {
   margin-top: 3.125rem; }
-  .wsu-footer-article .wsu-social-icons {
+  .wsu-article-footer .wsu-social-icons {
     border-bottom: 1px solid #262626;
     margin-bottom: 0.5em; }
 
@@ -652,3 +652,28 @@ $zindex-tooltip:                    1080;
     background-color: #fff;
     color: #A60F2D;
     border: 1px solid #999999; }
+
+.wsu-news-header {
+  padding-top: 1.75rem; }
+  .wsu-news-header__title {
+    color: #A60F2D;
+    font-size: calc( 5.125rem * 1.2);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2; }
+    .wsu-news-header__title strong {
+      font-weight: 800; }
+  .wsu-news-header__subtitle {
+    color: inherit;
+    font-size: 0.875rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.875rem; }
+  .wsu-news-header .wsu-social-icons {
+    margin-left: auto;
+    margin-right: 1.5rem;
+    justify-content: flex-end;
+    color: #4d4d4d; }

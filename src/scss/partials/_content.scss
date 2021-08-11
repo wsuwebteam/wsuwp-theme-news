@@ -1,7 +1,7 @@
 @import '../../assets/variables';
 @import '../../assets/mixins';
 
-.wsu-news-article-content {
+.wsu-article-copy {
 
     p:first-child {
         strong {
@@ -12,7 +12,7 @@
 
 }
 
-.wsu-footer-article {
+.wsu-article-footer {
 
     margin-top: $wsu-spacing--large;
 

@@ -20,6 +20,20 @@ class Query {
 	}
 
 
+	public static function get_block_query_args( $attrs ) {
+
+		$query_args = array(
+			'post_type'      => ( ! empty( $attrs['postType'] ) ) ? explode( ',', $attrs['postType'] ) : array( 'post' ),
+			'posts_per_page' => ( ! empty( $attrs['perPage'] ) ) ? $attrs['perPage'] : 10,
+			'posts_status'   => ( ! empty( $attrs['postStatus'] ) ) ? explode( ',', $attrs['postStatus'] ) : array( 'publish' ),
+		);
+
+		return $query_args;
+
+	}
+
+
+
 	public static function get_related( $post_id, $taxonomy = 'category', $query_args = array() ) {
 
 		$term_id = Taxonomy::get_related_term_id( $post_id, $taxonomy );
@@ -56,6 +70,5 @@ class Query {
 		$query_args['post__not_in'] = self::get_exclude_posts();
 
 	}
-
 
 }

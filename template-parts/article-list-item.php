@@ -1,8 +1,15 @@
 <article class="wsu-news-list-item">
-    <div class="wsu-news-list-item__content">
-        <!-- wp:wsuwp/article-meta-date /-->
-        <!-- wp:wsuwp/article-title {"className":"wsu-article-title","tag":"h3","link":"true"} /-->
-        <!-- wp:wsuwp/article-caption /-->
-    </div>
-    <!-- wp:wsuwp/article-image {"className":"wsu-ratio--has"} /-->
+	<div class="wsu-news-list-item__content">
+		<div class="wsu-meta-date"><?php echo esc_html( get_the_date() ); ?></div>
+		<h3 class="wsu-article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<div class="wsu-excerpt"><?php the_excerpt(); ?></div>
+	</div>
+	<?php if ( has_post_thumbnail() ) : $image_id = get_post_thumbnail_id(); ?>
+	<div class="wsu-image-frame wsu-ratio--4-3">
+		<img src="<?php echo esc_attr( wp_get_attachment_image_src( $image_id, 'medium' ) );?>"
+			srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $image_id, 'medium' ) ); ?>"
+			sizes="<?php echo esc_attr( wp_get_attachment_image_sizes( $image_id, 'medium' ) );?>"
+			alt="<?php echo esc_attr( get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ); ?>" />
+	</div>
+	<?php endif; ?>
 </article>
