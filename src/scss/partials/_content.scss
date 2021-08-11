@@ -3,6 +3,8 @@
 
 .wsu-article-copy {
 
+    padding-top: $wsu-spacing--large;
+
     p:first-child {
         strong {
             @include wsu-font--xxmedium();
@@ -37,10 +39,6 @@
         .wsu-article-hero {
             margin-bottom: 0;
         }
-    }
-
-    &-article-content {
-        padding-top: $wsu-spacing--large;
     }
 
     &-callout {

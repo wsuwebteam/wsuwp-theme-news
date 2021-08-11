@@ -398,10 +398,12 @@ $zindex-tooltip:                    1080;
 /* ========================================================
 == Transitions ==
 ==========================================================*/
-.wsu-article-copy p:first-child strong {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  font-weight: 600; }
+.wsu-article-copy {
+  padding-top: 3.125rem; }
+  .wsu-article-copy p:first-child strong {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600; }
 
 .wsu-article-footer {
   margin-top: 3.125rem; }
@@ -416,9 +418,6 @@ $zindex-tooltip:                    1080;
   margin-bottom: 5.125rem; }
   .wsu-news-article .wsu-article-hero {
     margin-bottom: 0; }
-
-.wsu-news-article-content {
-  padding-top: 3.125rem; }
 
 .wsu-news-callout {
   position: relative;
@@ -654,7 +653,8 @@ $zindex-tooltip:                    1080;
     border: 1px solid #999999; }
 
 .wsu-news-header {
-  padding-top: 1.75rem; }
+  padding-top: 1.75rem;
+  background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 4px, #f2f2f2 4px, #f2f2f2 6px); }
   .wsu-news-header__title {
     color: #A60F2D;
     font-size: calc( 5.125rem * 1.2);
