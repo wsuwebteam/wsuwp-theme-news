@@ -4,7 +4,7 @@
 class Theme {
 
 
-	protected static $version = '0.0.5';
+	protected static $version = '0.0.6';
 
 
 	public static function get( $property ) {
@@ -21,9 +21,10 @@ class Theme {
 
 	public static function init() {
 
+		self::load_class( 'query' );
+
 		require_once __DIR__ . '/scripts.php';
 		require_once __DIR__ . '/taxonomy.php';
-		require_once __DIR__ . '/query.php';
 		require_once __DIR__ . '/curated-news.php';
 		require_once __DIR__ . '/news-feed.php';
 		require_once __DIR__ . '/press-release.php';
@@ -34,9 +35,9 @@ class Theme {
 	}
 
 
-	public static function require_class( $class_slug ) {
+	public static function load_class( $class_slug ) {
 
-		require_once get_template_directory() . '/classes/class-' . $class_slug . '.php';
+		require_once get_stylesheet_directory() . '/classes/class-' . $class_slug . '.php';
 
 	}
 

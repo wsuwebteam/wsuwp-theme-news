@@ -1,7 +1,9 @@
 @import '../../assets/variables';
 @import '../../assets/mixins';
 
-.wsu-news-article-content {
+.wsu-article-copy {
+
+    padding-top: $wsu-spacing--large;
 
     p:first-child {
         strong {
@@ -12,7 +14,7 @@
 
 }
 
-.wsu-footer-article {
+.wsu-article-footer {
 
     margin-top: $wsu-spacing--large;
 
@@ -37,10 +39,6 @@
         .wsu-article-hero {
             margin-bottom: 0;
         }
-    }
-
-    &-article-content {
-        padding-top: $wsu-spacing--large;
     }
 
     &-callout {

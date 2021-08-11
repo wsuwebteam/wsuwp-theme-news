@@ -1,0 +1,44 @@
+.wsu-news-header {
+
+    padding-top: $wsu-spacing--xmedium;
+
+    background: repeating-linear-gradient(
+    -45deg,
+    #ffffff,
+    #ffffff 4px,
+    $wsu-color--gray-5 4px,
+    $wsu-color--gray-5 6px
+    );
+
+    &__title {
+        color: $wsu-color--crimson;
+        font-size: calc( #{$wsu-font-size--hero} * 1.2 );
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 500;
+        line-height: 1.2;
+
+        strong {
+            font-weight: 800;
+        }
+
+    }
+
+    &__subtitle {
+        color: inherit;
+        font-size: $wsu-font-size--small;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: $wsu-spacing--xsmall;
+    }
+
+    .wsu-social-icons {
+        margin-left: auto;
+        margin-right: $wsu-spacing--medium;
+        justify-content: flex-end;
+        color: $wsu-color--gray-70;
+    }
+
+} 
