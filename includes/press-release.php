@@ -40,6 +40,8 @@ class Press_Release {
 		// Converts the Structure Tags in our permalink.
 		add_filter( 'post_type_link', array( __CLASS__, 'post_type_link' ), 10, 2 );
 
+		add_filter( 'wsu_wds_component_post_byline', array( __CLASS__, 'set_author' ) );
+
 	}
 
 	public static function register_post_type() {
@@ -59,6 +61,34 @@ class Press_Release {
 
 		return $url;
 
+	}
+
+
+	public static function set_author( $attrs ) {
+
+		if ( 'news_article' === get_post_type() && taxonomy_exists( 'author' ) ) {
+
+			$attrs['authors'] = array();
+
+			$post_id = get_the_ID();
+
+			$terms = get_the_terms( $post_id, 'author' );
+
+			if ( is_array( $terms ) ) {
+
+				foreach ( $terms as $term ) {
+
+					$author = array(
+						'name' => $term->name,
+						'title' => get_term_meta( $term->term_id, 'organization', true ),
+					);
+
+					$attrs['authors'][] = $author;
+				}
+			}
+		}
+
+		return $attrs;
 	}
 
 }
