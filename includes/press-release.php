@@ -66,7 +66,7 @@ class Press_Release {
 
 	public static function set_author( $attrs ) {
 
-		if ( 'news_article' === get_post_type() && taxonomy_exists( 'author' ) ) {
+		if ( 'press_release' === get_post_type() && taxonomy_exists( 'author' ) ) {
 
 			$attrs['authors'] = array();
 

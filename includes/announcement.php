@@ -3,7 +3,7 @@
 
 class Announcement {
 
-	private static $slug = 'announcement';
+	private static $slug = 'wsu_announcement';
 
 	private static $attributes = array(
 		'labels'        => array(
