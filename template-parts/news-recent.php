@@ -9,10 +9,10 @@ while ( $news_query->have_posts() ) {
 
     WSUWP\Theme\News\Query::add_exclude_post( get_the_ID() );
 
-    WSUWP\Theme\WDS\Template::render( 'template-parts/article-list-item', get_post_type() );
+    WSUWP\Theme\WDS\Template::render( 'block-templates/article-card-horizontal-reversed', get_post_type(), array( 'title_tag' => 'h3' ) );
 
 };
 
 wp_reset_postdata(); ?>
-<a class="wsu-button" href="">Find More News</a>
+<a class="wsu-button" href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>">Find More News</a>
 </div>
