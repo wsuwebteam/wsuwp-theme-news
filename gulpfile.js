@@ -12,7 +12,7 @@ const components = [
 
 
 gulp.task('styles', () => {
-    return gulp.src('src/scss/style.scss')
+    return gulp.src('assets/src/scss/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest('./'));
@@ -28,13 +28,9 @@ gulp.task('bundleStyle', () => {
 
 
 gulp.task('watch', () => {
-    gulp.watch('src/scss/partials/*.scss', (done) => {
+    gulp.watch('assets/src/scss/partials/*.scss', (done) => {
         gulp.series(['styles'])(done);
     });
-
-    //gulp.watch('src/elements/**/*.scss', (done) => {
-       // gulp.series(['styles','bundleStyle'])(done);
-    //});
 
 });
 
