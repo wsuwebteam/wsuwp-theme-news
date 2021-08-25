@@ -17,3 +17,4 @@
 <!-- /wp:wsuwp/post-article -->
 <?php WSUWP\Theme\WDS\Template::render( 'template-parts/news-next-up', get_post_type() ); ?>
 <?php WSUWP\Theme\WDS\Template::render( 'template-parts/news-recent', get_post_type() ); ?>
+<?php WSUWP\Theme\WDS\Template::render( 'template-parts/sign-up', get_post_type() ); ?>

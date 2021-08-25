@@ -10,7 +10,9 @@ $featured_query_args = array(
 			'key' => '_thumbnail_id',
 		),
 	),
+	'post__not_in' => WSUWP\Theme\WDS\Query::get_exclude_posts(),
 );
+
 
 $news_query = WSUWP\Theme\News\Query::get( $featured_query_args );
 

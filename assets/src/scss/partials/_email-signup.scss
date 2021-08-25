@@ -1,0 +1,22 @@
+@import 'node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/_variables.scss';
+@import 'node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/_mixins.scss';
+
+#mc_embed_signup {
+    background-color: $wsu-color--gray-5;
+    padding: $wsu-spacing--medium;
+    border-radius: $wsu-border-radius--small;
+    text-align: center;
+    margin-top: 3rem;
+
+    h2 {
+        color: $wsu-color--crimson;
+        margin-bottom: 1rem;
+    }
+
+    .mc_embed_signup__text {
+        font-size: 0.8rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}  
