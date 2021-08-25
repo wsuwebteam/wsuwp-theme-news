@@ -54,9 +54,9 @@ class Press_Release {
 	public static function post_type_link( $url, $post ) {
 
 		if ( self::$slug == get_post_type( $post ) ) {
-			$url = str_replace( '%year%', get_the_date( 'Y' ), $url );
-			$url = str_replace( '%monthnum%', get_the_date( 'm' ), $url );
-			$url = str_replace( '%day%', get_the_date( 'd' ), $url );
+			$url = str_replace( '%year%', get_the_date( 'Y', $post->ID ), $url );
+			$url = str_replace( '%monthnum%', get_the_date( 'm', $post->ID ), $url );
+			$url = str_replace( '%day%', get_the_date( 'd', $post->ID ), $url );
 		}
 
 		return $url;
