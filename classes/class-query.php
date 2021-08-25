@@ -67,7 +67,7 @@ class Query {
 
 	public static function add_exclude( &$query_args ) {
 
-		$query_args['post__not_in'] = self::get_exclude_posts();
+		$query_args['post__not_in'] =  \WSUWP\Theme\WDS\Query::get_exclude_posts();
 
 	}
 
