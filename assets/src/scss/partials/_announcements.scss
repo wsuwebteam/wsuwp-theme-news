@@ -1,12 +1,50 @@
-@import './../variables';
-@import './../assets/mixins';
-@import ''
+
+@import 'node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/_variables.scss';
+@import 'node_modules/@wsuwebteam/wsu-web-design-system/_assets/scss/_mixins.scss';
 
 .archive.post-type-archive-wsu_announcement {
 
     .wsu-collapsable--content {
-        margin-left:
+        margin-left: $wsu-spacing--xsmall;
+        border-left: 2px solid $wsu-color--gray-10;
+        padding-left: $wsu-spacing--small;
+        margin-top: $wsu-spacing--small;
     }
 
+    .wsu-announcements__intro {
+        margin-bottom: $wsu-spacing--component;
+    }
 
-}
+    .wsu-announcements__form {
+        margin-bottom: $wsu-spacing--xlarge;
+    }
+
+    .wsu-announcements__results-title {
+        border-bottom: 1px solid $wsu-color--gray-40;
+        margin-bottom: $wsu-spacing--xxmedium;
+        font-weight: 500;
+        @include wsu-font--xlarge();
+    }
+
+    .wsu-announcements-submit {
+        text-align: center;
+        margin-bottom: $wsu-spacing--xxmedium;
+
+        &__title {
+            font-weight: 400;
+            @include wsu-font--large();
+            margin-bottom: $wsu-spacing--small;
+
+            strong {
+                font-weight: 700;
+                display: block;
+            }
+        }
+
+        &__button {
+            width: 80%;
+            margin-right: 0;
+        }
+    }
+
+} 
