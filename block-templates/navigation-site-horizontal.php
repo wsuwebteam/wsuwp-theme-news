@@ -1,0 +1,1 @@
+<!-- wp:wsuwp/navigation-site-vertical {"className":"wsu-navigation-site--horizontal"} /-->

@@ -18,4 +18,62 @@
         border: 1px solid $wsu-color--gray-40;
     }
 
-} 
+}
+
+h1::after {
+    display: none;
+}
+
+.wsu-pagination {
+    border-top: 1px solid $wsu-color--gray-40;
+    padding-top: $wsu-spacing--medium;
+
+    &__left,
+    &__right {
+        display: inline-block;
+    }
+
+    &__left a::before,
+    &__right a::after {
+        display: inline-block;
+        content: '\F107';
+        font-family: 'wsu-icons';
+        vertical-align: middle;
+        font-size: $wsu-font-size--small;
+        margin-left: $wsu-spacing--xxsmall;
+    }
+
+    &__left a::before {
+        transform: rotate(180deg);
+        margin-left: 0;
+        margin-right: $wsu-spacing--xxsmall;
+    }
+
+    .wsu-button {
+        padding-left: $wsu-spacing--large;
+        padding-right: $wsu-spacing--large;
+    }
+}
+
+.wsu-layout--sidebar .wsu-layout-panel:first-child {
+    padding-right: 2.5rem;
+}
+
+.wsu-wrapper-content::before {
+    display: none;
+}
+
+.wsu-menu-toggle>li[aria-expanded]>a::after {
+    display: none !important;
+}
+
+.wsu-navigation-site--horizontal {
+
+    .wsu-menu-toggle {
+        justify-content: center;
+    }
+}
+
+.wsu-wrapper-content {
+    padding-top: $wsu-spacing--xmedium;
+}

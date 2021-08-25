@@ -1,6 +1,8 @@
 .wsu-news-header {
 
     padding-top: $wsu-spacing--xmedium;
+    border-bottom: 3px solid $wsu-color--gray-10;
+    margin-bottom: $wsu-spacing--xxsmall;
 
     background: repeating-linear-gradient(
     -45deg,

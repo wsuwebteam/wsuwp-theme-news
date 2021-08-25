@@ -31,6 +31,7 @@ class Theme {
 		require_once __DIR__ . '/news-templates-page.php';
 		require_once __DIR__ . '/content-defaults.php';
 		require_once __DIR__ . '/announcement.php';
+		require_once __DIR__ . '/shortcodes.php';
 
 	}
 

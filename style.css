@@ -737,8 +737,49 @@ $zindex-tooltip:                    1080;
     color: #A60F2D;
     border: 1px solid #999999; }
 
+h1::after {
+  display: none; }
+
+.wsu-pagination {
+  border-top: 1px solid #999999;
+  padding-top: 1.5rem; }
+  .wsu-pagination__left, .wsu-pagination__right {
+    display: inline-block; }
+  .wsu-pagination__left a::before,
+  .wsu-pagination__right a::after {
+    display: inline-block;
+    content: '\F107';
+    font-family: 'wsu-icons';
+    vertical-align: middle;
+    font-size: 0.875rem;
+    margin-left: 0.6875rem; }
+  .wsu-pagination__left a::before {
+    transform: rotate(180deg);
+    margin-left: 0;
+    margin-right: 0.6875rem; }
+  .wsu-pagination .wsu-button {
+    padding-left: 3.125rem;
+    padding-right: 3.125rem; }
+
+.wsu-layout--sidebar .wsu-layout-panel:first-child {
+  padding-right: 2.5rem; }
+
+.wsu-wrapper-content::before {
+  display: none; }
+
+.wsu-menu-toggle > li[aria-expanded] > a::after {
+  display: none !important; }
+
+.wsu-navigation-site--horizontal .wsu-menu-toggle {
+  justify-content: center; }
+
+.wsu-wrapper-content {
+  padding-top: 1.75rem; }
+
 .wsu-news-header {
   padding-top: 1.75rem;
+  border-bottom: 3px solid #e6e6e6;
+  margin-bottom: 0.6875rem;
   background: repeating-linear-gradient(-45deg, #ffffff, #ffffff 4px, #f2f2f2 4px, #f2f2f2 6px); }
   .wsu-news-header__title {
     color: #A60F2D;
@@ -782,3 +823,194 @@ $zindex-tooltip:                    1080;
     .wsu-news-article .wp-block-image.size-medium figcaption {
       max-width: 175px;
       margin-left: 1.5rem; }
+
+/*
+- Colors
+---- Crimsons
+---- WSU Grays
+- Dropshadows
+- Easing
+- Font Family
+- Font Size
+- Font Weights
+- Media Sizes
+- Spacing
+- Transition Speed
+- Z-Index
+*/
+/* ========================================================
+== Border Radius ==
+==========================================================*/
+/* ========================================================
+== Breakpoints ==
+==========================================================*/
+/* ========================================================
+== Colors ==
+==========================================================*/
+/* WSU Crimson */
+/* WSU Grays */
+/* ========================================================
+== Dropshadows ==
+==========================================================*/
+/* ========================================================
+== Easing ==
+==========================================================*/
+/* ========================================================
+== Font Family ==
+==========================================================*/
+/* ========================================================
+== Font Sizes ==
+==========================================================*/
+/* ========================================================
+== Font Weights ==
+==========================================================*/
+/* ========================================================
+== Image Sizes ==
+==========================================================*/
+/* ========================================================
+== Ratios height/width ==
+==========================================================*/
+/* ========================================================
+== Spacing ==
+==========================================================*/
+/* ========================================================
+== Transition Speed ==
+==========================================================*/
+/* ========================================================
+== Widths ==
+==========================================================*/
+/* ========================================================
+== Z-Index ==
+
+Bootstrap z-index for reference
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-offcanvas:                  1050;
+$zindex-modal:                      1060;
+$zindex-popover:                    1070;
+$zindex-tooltip:                    1080;
+
+==========================================================*/
+/*
+- Colors
+---- Crimsons
+---- WSU Grays
+- Dropshadows
+- Easing
+- Font Family
+- Font Size
+- Font Weights
+- Media Sizes
+- Spacing
+- Transition Speed
+- Z-Index
+*/
+/* ========================================================
+== Border Radius ==
+==========================================================*/
+/* ========================================================
+== Breakpoints ==
+==========================================================*/
+/* ========================================================
+== Colors ==
+==========================================================*/
+/* WSU Crimson */
+/* WSU Grays */
+/* ========================================================
+== Dropshadows ==
+==========================================================*/
+/* ========================================================
+== Easing ==
+==========================================================*/
+/* ========================================================
+== Font Family ==
+==========================================================*/
+/* ========================================================
+== Font Sizes ==
+==========================================================*/
+/* ========================================================
+== Font Weights ==
+==========================================================*/
+/* ========================================================
+== Image Sizes ==
+==========================================================*/
+/* ========================================================
+== Ratios height/width ==
+==========================================================*/
+/* ========================================================
+== Spacing ==
+==========================================================*/
+/* ========================================================
+== Transition Speed ==
+==========================================================*/
+/* ========================================================
+== Widths ==
+==========================================================*/
+/* ========================================================
+== Z-Index ==
+
+Bootstrap z-index for reference
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-offcanvas:                  1050;
+$zindex-modal:                      1060;
+$zindex-popover:                    1070;
+$zindex-tooltip:                    1080;
+
+==========================================================*/
+/* =====================
+
+- Fonts
+- Modals
+- Menu Items
+
+===================== */
+/* ========================================================
+== Fonts ==
+==========================================================*/
+/* ========================================================
+== Menu Items ==
+==========================================================*/
+/* ========================================================
+== Modals ==
+==========================================================*/
+/* ========================================================
+== Transitions ==
+==========================================================*/
+.archive.post-type-archive-wsu_announcement .wsu-collapsable--content {
+  margin-left: 0.875rem;
+  border-left: 2px solid #e6e6e6;
+  padding-left: 1.125rem;
+  margin-top: 1.125rem; }
+
+.archive.post-type-archive-wsu_announcement .wsu-announcements__intro {
+  margin-bottom: 1.75rem; }
+
+.archive.post-type-archive-wsu_announcement .wsu-announcements__form {
+  margin-bottom: 4.125rem; }
+
+.archive.post-type-archive-wsu_announcement .wsu-announcements__results-title {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 2.25rem;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.2; }
+
+.archive.post-type-archive-wsu_announcement .wsu-announcements-submit {
+  text-align: center;
+  margin-bottom: 2.25rem; }
+  .archive.post-type-archive-wsu_announcement .wsu-announcements-submit__title {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 1.125rem; }
+    .archive.post-type-archive-wsu_announcement .wsu-announcements-submit__title strong {
+      font-weight: 700;
+      display: block; }
+  .archive.post-type-archive-wsu_announcement .wsu-announcements-submit__button {
+    width: 80%;
+    margin-right: 0; }
