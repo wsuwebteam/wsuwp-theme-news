@@ -10,7 +10,7 @@
 		<!-- SITE CONTAINER:START -->
 		<?php Template::render( 'block-templates/header-site', get_post_type() ); ?>
 		<?php Template::render( 'block-templates/navigation-site-horizontal', get_post_type() ); ?>
-		<?php Template::render( 'template-parts/post', get_post_type() ); ?>
+		<?php Template::render( 'template-parts/search', get_post_type() ); ?>
 		<!-- SITE CONTAINER:END -->
 	</div>
 	<!-- SITE WRAPPER:END -->

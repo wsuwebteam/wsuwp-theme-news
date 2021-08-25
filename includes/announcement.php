@@ -46,9 +46,15 @@ class Announcement {
 
 		if ( ! is_admin() && $query->is_main_query() && is_post_type_archive( 'wsu_announcement' ) ) {
 
-			$query->set( 'posts_per_page', 100 );
+			$query->set( 'posts_per_page', 20 );
 
-			$query->set( 'date_query', array( array( 'after' => '1 week ago' ) ) );
+			if ( isset( $_REQUEST['search_announcements'] ) ) {
+
+				$query->set( 's', sanitize_text_field( $_REQUEST['search_announcements']  ) );
+				
+			}
+
+			//$query->set( 'date_query', array( array( 'after' => '1 week ago' ) ) );
 
 		}
 

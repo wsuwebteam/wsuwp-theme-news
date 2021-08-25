@@ -9,12 +9,12 @@ takes no ownership or responsibility for the content these posts contain.
 			</div>
 			<form class="wsu-announcements__form" method="get">
 				<div class="wsu-search-field wsu-search-field--secondary">
-					<input class="wsu-search-field__input" type="text" name="s" value="<?php echo esc_html( $_REQUEST['s'] ?: '' ); ?>" placeholder="Search Announcements" />
+					<input class="wsu-search-field__input" type="text" name="search_announcements" value="<?php echo esc_html( $_REQUEST['search_announcements'] ?: '' ); ?>" placeholder="Search Announcements" />
 					<button class="wsu-search-field__button" type="submit">Search</button>
 				</div>
 			</form>
 			<h2 class="wsu-announcements__results-title">
-			<?php if ( ! empty( $_REQUEST['s'] ) ) : ?>Search Results<?php elseif ( is_paged() ) : ?>Announcements Archive<?php else : ?>New This Week<?php endif; ?>
+			<?php if ( ! empty( $_REQUEST['search_announcements'] ) ) : ?>Search Results<?php elseif ( is_paged() ) : ?>Announcements Archive<?php else : ?>Recent Announcements<?php endif; ?>
 			</h2>
 			<?php 
 			if ( have_posts() ) {
