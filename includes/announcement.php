@@ -17,6 +17,7 @@ class Announcement {
 		'rewrite'       => array( 'slug' => 'announcements' ),
 		'menu_position' => 8,
 		'menu_icon'     => 'dashicons-megaphone',
+		'supports'      => array( 'title', 'editor', 'custom-fields'),
 	);
 
 	public static function init() {
@@ -33,12 +34,36 @@ class Announcement {
 
 		add_action( 'wp_ajax_copy_announcement_to_post', array( __CLASS__, 'ajax_copy_announcement_to_post' ) );
 
+		add_filter( 'wsu_wds_component_post_byline', array( __CLASS__, 'set_author' ) );
+
 	}
 
 	public static function register_post_type() {
 
 		register_post_type( self::$slug, self::$attributes );
 
+	}
+
+
+	public static function set_author( $attrs ) {
+
+		if ( self::$slug === get_post_type() ) {
+
+			$attrs['authors'] = array();
+
+			$post_id = get_the_ID();
+
+			$author = get_post_meta( $post_id, 'announcement_author', true );
+
+			if ( $author ) {
+
+				$attrs['authors'][] = array(
+					'name' => $author,
+				);
+			}
+		}
+
+		return $attrs;
 	}
 
 
@@ -116,17 +141,25 @@ class Announcement {
 				);
 				wp_editor( '', 'announcement-form-text', $editor_settings );
 				?>
-				<label for="announcement-form-date">What date should this announcement be published on?</label><br>
-				<input type="text" id="announcement-form-date" class="announcement-form-input announcement-form-date-input" name="announcement-date" value="" />
-				<br>
-				<br>
-				<label for="announcement-form-email">Your Email Address:</label><br>
-				<input type="text" id="announcement-form-email" class="announcement-form-input" name="announcement-email" value="" />
-				<div id="announcement-other-wrap">
+				<p>
+					<label for="announcement-form-date">What date should this announcement be published on?</label>
+					<input type="text" id="announcement-form-date" class="announcement-form-input announcement-form-date-input" name="announcement-date" value="" />
+				</p>
+				<p>
+					<label for="announcement-form-email">Your Email Address:</label>
+					<input type="text" id="announcement-form-email" class="announcement-form-input" name="announcement-email" value="" />
+				</p>
+				<p>
+					<label for="announcement-form-author">Author/Organization (Required)</label>
+					<input type="text" id="announcement-form-author" class="announcement-form-input" name="announcement-author" value="" />
+					<span class="announcement-helper">Author Orginization will display on the announcement in the "By:" field</span>
+					<span class="announcement-helper">Example: Butch Cougar, University Marketing and Communications</span>
+				</p>
+				<p id="announcement-other-wrap">
 					If you see the following input box, please leave it empty.
 					<label for="announcement-form-other">Other Input:</label>
 					<input type="text" id="announcement-form-other" class="announcement-form-input" name="announcement-other" value="" />
-				</div>
+				</p>
 				<div id="announcement-submit-wrap">
 					<input type="submit" id="announcement-form-submit" class="announcement-form-input" value="Submit Announcement" />
 				</div>
@@ -167,6 +200,7 @@ class Announcement {
 
 		$text = wp_kses_post( $text );
 		$email = sanitize_email( $_POST['email'] );
+		$author = wp_kses_post( $_POST['author'] );
 
 		// If a websubmission user exists, we'll use that user ID.
 		$user = get_user_by( 'slug', 'websubmission' );
@@ -199,6 +233,8 @@ class Announcement {
 		}
 
 		update_post_meta( $post_id, '_announcement_contact_email', $email );
+
+		update_post_meta( $post_id, 'announcement_author', $author );
 
 		echo 'success';
 		exit;
