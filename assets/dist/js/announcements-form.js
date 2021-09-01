@@ -53,6 +53,13 @@
 		let form_text  = $( "#announcement-form-text" ).val();
 
 		/**
+		 * The content of the announcement.
+		 *
+		 * @type {string}
+		 */
+		 let form_author  = $( "#announcement-form-author" ).val();
+
+		/**
 		 * The date on which the announcement should be published.
 		 *
 		 * @type {array}
@@ -79,6 +86,11 @@
 			return 0;
 		}
 
+		if ( "" === form_author ) {
+			window.alert( "Please enter the author or organization." );
+			return 0;
+		}
+
 		// Build the data for our ajax call
 		let data = {
 			action: "submit_announcement",
@@ -86,6 +98,7 @@
 			text:   form_text,
 			email:  form_email,
 			date:  form_date,
+			author: form_author,
 			other:  $( "#announcement-form-other" ).val()
 		};
 
