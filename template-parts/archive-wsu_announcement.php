@@ -5,8 +5,7 @@
 			<div class="wsu-announcements__intro">
 			The Notices and Announcements section is provided as a service to the WSU community for sharing events such as lectures, trainings, and other highly 
 			transactional types of information related to the university experience. Accuracy of the information presented is the responsibility of 
-			those who submitted it. The self-uploaded posts are reviewed for compliance with state statutes and ethics guidelines but are not edited by the News 
-			and Media Relations unit for spelling, grammar or clarity.
+			those who submitted it. The self-uploaded posts are reviewed for compliance with state statutes and ethics guidelines but are not edited for spelling, grammar, or clarity.
 			</div>
 			<form class="wsu-announcements__form" method="get">
 				<div class="wsu-search-field wsu-search-field--secondary">

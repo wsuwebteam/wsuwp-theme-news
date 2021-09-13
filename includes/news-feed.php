@@ -14,6 +14,7 @@ class News_Feed {
 		'show_ui'      => true,
 		'show_in_menu' => 'news_templates',
 		'show_in_rest' => true,
+		'exclude_from_search' => true,
 		'supports'     => array(
 			'title',
 			'editor',

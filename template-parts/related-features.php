@@ -1,5 +1,5 @@
 <div class="wsu-callout wsu-news-callout wsu-news-callout--related">
-<h2>You Might <span>Also Like...</span></h2>
+<h2>Recommended<span>Features</span></h2>
 <?php
 
 $news_query = WSUWP\Theme\News\Query::get_related( 

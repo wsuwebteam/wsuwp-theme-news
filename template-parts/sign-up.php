@@ -7,7 +7,6 @@
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_02b3cd67989caec2eec47f036_c48ab7f5c3" tabindex="-1" value=""></div>
             <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
         </div>
-        <p class="mc_embed_signup__text">Washington State University employees receive WSU Insider updates automatically—no sign up is necessary. All others (legislators, news agencies, alumni, fans,
-and other members of the general public) can receive WSU Insider updates by subscribing to WSU Insider using the above form.</p>
+        <p class="mc_embed_signup__text">Subscribe to WSU Insider to receive free daily updates by email. University employees are automatically subscribed—no sign up is necessary.</p>
     </form>
 </div>
