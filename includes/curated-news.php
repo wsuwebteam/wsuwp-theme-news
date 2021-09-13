@@ -14,7 +14,8 @@ class Curated_News {
 		'show_ui'      => true,
 		'show_in_menu' => 'news_templates',
 		'show_in_rest' => true,
-		'public'       => true,  
+		'public'       => true,
+		'exclude_from_search' => true,
  		'supports'     => array(
 			'title',
 			'editor',
