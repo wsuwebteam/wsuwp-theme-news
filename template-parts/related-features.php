@@ -14,7 +14,7 @@ while ( $news_query->have_posts() ) {
 
     WSUWP\Theme\News\Query::add_exclude_post( get_the_ID() );
 
-    WSUWP\Theme\WDS\Template::render( 'template-parts/news-card', get_post_type() );
+    WSUWP\Theme\WDS\Template::render( 'template-parts/news-card', get_post_type(), array( 'link' => true ) );
 
 };
 

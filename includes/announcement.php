@@ -119,6 +119,7 @@ class Announcement {
 			<form action="#" class="">
 				<label for="announcement-form-title">Announcement Title:</label>
 				<input type="text" id="announcement-form-title" class="announcement-form-input" name="announcement-title" value="" />
+				<div class="announcements-helper-text"><strong>110 character limit</strong> | characters remaining: <span id="announcement-form-title--limit">110</span></div>
 				<label for="announcement-form-text">Announcement Text:</label>
 				<?php
 				$editor_settings = array(
@@ -141,6 +142,7 @@ class Announcement {
 				);
 				wp_editor( '', 'announcement-form-text', $editor_settings );
 				?>
+				<div class="announcements-helper-text"><strong>1050 character limit</strong> | characters remaining: <span id="announcement-form-text--limit">1050</span></div>
 				<p>
 					<label for="announcement-form-date">What date should this announcement be published on?</label>
 					<input type="text" id="announcement-form-date" class="announcement-form-input announcement-form-date-input" name="announcement-date" value="" />

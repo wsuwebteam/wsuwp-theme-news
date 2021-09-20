@@ -44,3 +44,22 @@
 	display: block;
 	font-size: 0.8rem;
 }
+
+.character-limit-close {
+	color: rgb(207, 136, 4);
+}
+
+.character-limit-over {
+	color: rgb(196, 3, 3);
+}
+
+.announcements-helper-text {
+	font-size: 0.8rem;
+	margin-bottom: 2rem;
+	font-style: italic;
+}
+
+.announcements-helper-text span {
+	font-weight: 600;
+}
+
