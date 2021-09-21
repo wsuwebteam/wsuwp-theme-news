@@ -15,6 +15,7 @@ class Announcement {
 		'has_archive'   => true,
 		'show_in_rest'  => true,
 		'rewrite'       => array( 'slug' => 'announcements' ),
+		'taxonomies'    => array( 'post_tag', 'category', 'wsuwp_university_location', 'wsuwp_university_org', 'wsuwp_university_category' ),
 		'menu_position' => 8,
 		'menu_icon'     => 'dashicons-megaphone',
 		'supports'      => array( 'title', 'editor', 'custom-fields'),
@@ -36,11 +37,59 @@ class Announcement {
 
 		add_filter( 'wsu_wds_component_post_byline', array( __CLASS__, 'set_author' ) );
 
+		add_action( 'init', array( __CLASS__, 'register_taxonomies' ), 12 );
+
+	}
+
+
+	public static function register_taxonomies() {
+
+		register_taxonomy_for_object_type( 'wsuwp_university_category', self::$slug );
+
+		register_taxonomy_for_object_type( 'wsuwp_university_location', self::$slug );
+
+		register_taxonomy_for_object_type( 'wsuwp_university_org', self::$slug );
+
 	}
 
 	public static function register_post_type() {
 
+		add_rewrite_rule(
+			'^announcements/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)',
+			'index.php?wsu_announcement=$matches[4]',
+			'top'
+		);
+		add_rewrite_rule(
+			'^announcements/([0-9]{4})/([0-9]{1,2})/?$',
+			'index.php?post_type=wsu_announcement&year=$matches[1]&monthnum=$matches[2]',
+			'top'
+		);
+		add_rewrite_rule(
+			'^announcements/([0-9]{4})/?$',
+			'index.php?post_type=wsu_announcement&year=$matches[1]',
+			'top'
+		);
+
 		register_post_type( self::$slug, self::$attributes );
+
+	}
+
+	public static function post_type_link( $url, $post ) {
+
+		if ( self::$slug == get_post_type( $post ) ) {
+
+			$url_array = explode( '/announcements/', $url );
+
+			$url = $url_array[0] . '/announcements/';
+
+			$url .= get_the_date( 'Y', $post->ID ) . '/';
+			$url .= get_the_date( 'm', $post->ID ) . '/';
+			$url .= get_the_date( 'd', $post->ID ) . '/';
+			$url .= $url_array[1];
+
+		}
+
+		return $url;
 
 	}
 
