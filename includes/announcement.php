@@ -15,6 +15,7 @@ class Announcement {
 		'has_archive'   => true,
 		'show_in_rest'  => true,
 		'rewrite'       => array( 'slug' => 'announcements' ),
+		'taxonomies'    => array( 'post_tag', 'category', 'wsuwp_university_location', 'wsuwp_university_org', 'wsuwp_university_category' ),
 		'menu_position' => 8,
 		'menu_icon'     => 'dashicons-megaphone',
 		'supports'      => array( 'title', 'editor', 'custom-fields'),

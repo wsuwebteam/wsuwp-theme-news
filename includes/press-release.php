@@ -30,6 +30,9 @@ class Press_Release {
 			'post_tag',
 			'category',
 			'media_contact',
+			'wsuwp_university_location',
+			'wsuwp_university_org',
+			'wsuwp_university_category',
 		),
 	);
 
