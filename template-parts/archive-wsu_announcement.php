@@ -1,3 +1,18 @@
+<?php 
+
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+$dates = array();
+
+for ( $d = 0; $d < 7; $d++ ) {
+
+	$date_string = ( 0 === $d && 1 === $paged ) ? 'now' : '-' . ( $d + ( 7 * ( $paged - 1 ) ) )  . ' day';
+
+	$dates[] = strtotime( $date_string );
+
+}
+
+?>
 <div class="wsu-wrapper-content">
 	<div class="wsu-layout wsu-layout--sidebar">
 		<main class="wsu-layout-panel">
@@ -16,14 +31,43 @@
 			<h2 class="wsu-announcements__results-title">
 			<?php if ( ! empty( $_REQUEST['search_announcements'] ) ) : ?>Search Results<?php elseif ( is_paged() ) : ?>Announcements Archive<?php else : ?>Recent Announcements<?php endif; ?>
 			</h2>
+
+			<?php 
+
+			foreach( $dates as $date ) {
+
+				$query_args = array(
+					'post_type' => 'wsu_announcement',
+					'posts_per_page' => -1,
+					'date_query' => array(
+						'year' => wp_date( 'Y', $date ),
+						'month' => wp_date( 'm', $date ),
+						'day' => wp_date( 'd', $date ),
+					),
+				);
+
+				$the_query = new WP_Query( $query_args );
+ 
+				if ( $the_query->have_posts() ) {
+
+					while ( $the_query->have_posts() ) {
+
+						$the_query->the_post();
+
+						WSUWP\Theme\WDS\Template::render( 'block-templates/article-accordion', get_post_type() );
+
+					}
+				}
+
+				wp_reset_postdata();
+			}
+
+			?>
+
 			<?php 
 			if ( have_posts() ) {
 				while ( have_posts() ) {
 					the_post();
-
-						//WSUWP\Theme\WDS\Template::render( 'block-templates/article-card-horizontal-reversed', get_post_type() );
-
-						WSUWP\Theme\WDS\Template::render( 'block-templates/article-accordion', get_post_type() );
 
 					} // end while
 
