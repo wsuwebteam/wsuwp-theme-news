@@ -34,33 +34,37 @@ for ( $d = 0; $d < 7; $d++ ) {
 
 			<?php 
 
-			foreach( $dates as $date ) {
+			if ( empty( $_REQUEST['search_announcements'] ) ) {
 
-				$query_args = array(
-					'post_type' => 'wsu_announcement',
-					'posts_per_page' => -1,
-					'date_query' => array(
-						'year' => wp_date( 'Y', $date ),
-						'month' => wp_date( 'm', $date ),
-						'day' => wp_date( 'd', $date ),
-					),
-				);
+				foreach( $dates as $date ) {
 
-				$the_query = new WP_Query( $query_args );
- 
-				if ( $the_query->have_posts() ) {
-
-					while ( $the_query->have_posts() ) {
-
-						$the_query->the_post();
-
-						WSUWP\Theme\WDS\Template::render( 'block-templates/article-accordion', get_post_type() );
-
+					$query_args = array(
+						'post_type' => 'wsu_announcement',
+						'posts_per_page' => -1,
+						'date_query' => array(
+							'year' => wp_date( 'Y', $date ),
+							'month' => wp_date( 'm', $date ),
+							'day' => wp_date( 'd', $date ),
+						),
+					);
+	
+					$the_query = new WP_Query( $query_args );
+	 
+					if ( $the_query->have_posts() ) {
+	
+						while ( $the_query->have_posts() ) {
+	
+							$the_query->the_post();
+	
+							WSUWP\Theme\WDS\Template::render( 'block-templates/article-accordion', get_post_type() );
+	
+						}
 					}
+	
+					wp_reset_postdata();
 				}
 
-				wp_reset_postdata();
-			}
+			} 
 
 			?>
 
@@ -69,9 +73,15 @@ for ( $d = 0; $d < 7; $d++ ) {
 				while ( have_posts() ) {
 					the_post();
 
-					} // end while
+					if ( ! empty( $_REQUEST['search_announcements'] ) ) {
 
-					WSUWP\Theme\WDS\Template::render( 'block-templates/pagination', get_post_type() );
+						WSUWP\Theme\WDS\Template::render( 'block-templates/article-accordion', get_post_type() );
+
+					}
+
+				} // end while
+
+				WSUWP\Theme\WDS\Template::render( 'block-templates/pagination', get_post_type() );
 			} 
 			;?>
 		</main>
