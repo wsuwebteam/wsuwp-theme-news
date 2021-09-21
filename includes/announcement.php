@@ -40,7 +40,42 @@ class Announcement {
 
 	public static function register_post_type() {
 
+		add_rewrite_rule(
+			'^announcements/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)',
+			'index.php?wsu_announcement=$matches[4]',
+			'top'
+		);
+		add_rewrite_rule(
+			'^announcements/([0-9]{4})/([0-9]{1,2})/?$',
+			'index.php?post_type=wsu_announcement&year=$matches[1]&monthnum=$matches[2]',
+			'top'
+		);
+		add_rewrite_rule(
+			'^announcements/([0-9]{4})/?$',
+			'index.php?post_type=wsu_announcement&year=$matches[1]',
+			'top'
+		);
+
 		register_post_type( self::$slug, self::$attributes );
+
+	}
+
+	public static function post_type_link( $url, $post ) {
+
+		if ( self::$slug == get_post_type( $post ) ) {
+
+			$url_array = explode( '/announcements/', $url );
+
+			$url = $url_array[0] . '/announcements/';
+
+			$url .= get_the_date( 'Y', $post->ID ) . '/';
+			$url .= get_the_date( 'm', $post->ID ) . '/';
+			$url .= get_the_date( 'd', $post->ID ) . '/';
+			$url .= $url_array[1];
+
+		}
+
+		return $url;
 
 	}
 
