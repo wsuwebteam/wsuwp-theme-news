@@ -37,6 +37,19 @@ class Announcement {
 
 		add_filter( 'wsu_wds_component_post_byline', array( __CLASS__, 'set_author' ) );
 
+		add_action( 'init', array( __CLASS__, 'register_taxonomies' ), 12 );
+
+	}
+
+
+	public static function register_taxonomies() {
+
+		register_taxonomy_for_object_type( 'wsuwp_university_category', self::$slug );
+
+		register_taxonomy_for_object_type( 'wsuwp_university_location', self::$slug );
+
+		register_taxonomy_for_object_type( 'wsuwp_university_org', self::$slug );
+
 	}
 
 	public static function register_post_type() {
