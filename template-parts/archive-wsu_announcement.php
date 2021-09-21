@@ -24,7 +24,7 @@ for ( $d = 0; $d < 7; $d++ ) {
 			</div>
 			<form class="wsu-announcements__form" method="get">
 				<div class="wsu-search-field wsu-search-field--secondary">
-					<input class="wsu-search-field__input" type="text" name="search_announcements" value="<?php echo esc_html( $_REQUEST['search_announcements'] ?: '' ); ?>" placeholder="Search Announcements" />
+					<input class="wsu-search-field__input" type="text" name="search_announcements" aria-label="Search for" value="<?php echo esc_html( $_REQUEST['search_announcements'] ?: '' ); ?>" placeholder="Search Announcements" />
 					<button class="wsu-search-field__button" type="submit">Search</button>
 				</div>
 			</form>
