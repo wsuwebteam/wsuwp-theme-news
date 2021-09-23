@@ -21,6 +21,7 @@ class Press_Release {
 			'editor',
 			'thumbnail',
 			'excerpt',
+			'custom-fields',
 		),
 		'rewrite'       => array(
 			'slug'       => 'press-release',
