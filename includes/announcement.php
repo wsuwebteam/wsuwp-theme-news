@@ -39,6 +39,41 @@ class Announcement {
 
 		add_action( 'init', array( __CLASS__, 'register_taxonomies' ), 12 );
 
+		add_action( 'manage_wsu_announcement_posts_custom_column', array( __CLASS__, 'manage_list_table_email_column' ), 10, 2 );
+
+		add_filter( 'manage_edit-wsu_announcement_columns', array( __CLASS__, 'manage_list_table_columns' ), 10, 1 );
+
+	}
+
+
+	public static function manage_list_table_columns( $columns ) {
+		// We may use categories and tags, but we don't need them on this screen.
+		unset( $columns['categories'] );
+		unset( $columns['tags'] );
+		unset( $columns['date'] );
+
+		// Add our custom columns. Move date to the end of the array after we unset it above.
+		$columns['contact_email'] = 'Contact Email';
+		$columns['date'] = 'Publish Date';
+
+		return $columns;
+	}
+
+	public static function manage_list_table_email_column( $column_name, $post_id ) {
+
+		if ( 'contact_email' !== $column_name ) {
+
+			return;
+
+		}
+
+		$contact_email = get_post_meta( $post_id, '_announcement_contact_email', true );
+
+		if ( $contact_email ) {
+
+			echo esc_html( $contact_email );
+
+		}
 	}
 
 
@@ -125,7 +160,7 @@ class Announcement {
 			if ( isset( $_REQUEST['search_announcements'] ) ) {
 
 				$query->set( 's', sanitize_text_field( $_REQUEST['search_announcements']  ) );
-				
+
 			}
 
 			//$query->set( 'date_query', array( array( 'after' => '1 week ago' ) ) );
