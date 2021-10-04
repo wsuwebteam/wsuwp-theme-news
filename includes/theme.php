@@ -4,7 +4,7 @@
 class Theme {
 
 
-	protected static $version = '1.0.7';
+	protected static $version = '1.0.8';
 
 
 	public static function get( $property ) {
@@ -32,6 +32,7 @@ class Theme {
 		require_once __DIR__ . '/content-defaults.php';
 		require_once __DIR__ . '/announcement.php';
 		require_once __DIR__ . '/shortcodes.php';
+		require_once __DIR__ . '/templates.php';
 
 		// Added from https://github.com/washingtonstateuniversity/news.wsu.edu-internal/blob/master/includes/content-syndicate.php
 		require_once __DIR__ . '/content-syndicate.php';
