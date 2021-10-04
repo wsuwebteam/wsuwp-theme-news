@@ -92,7 +92,7 @@
 
 		form_text_chars = form_text_chars.replace(/<\/?[^>]+(>|$)/g, '');
 
-		form_text_chars = form_text_chars.replace('&nbsp;', '');
+		form_text_chars = form_text_chars.replace( /\&nbsp;/g, '');
 
 		if ( 1050 < form_text_chars.length ) {
 			console.log( form_text_chars );
