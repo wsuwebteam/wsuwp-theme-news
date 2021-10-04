@@ -94,6 +94,10 @@
 
 		form_text_chars = form_text_chars.replace( /\&nbsp;/g, '');
 
+		console.log( form_text_chars );
+
+		console.log( form_text_chars.length );
+
 		if ( 1050 < form_text_chars.length ) {
 			console.log( form_text_chars );
 			window.alert( "Please shorten the text for the announcement to 1050 characters." );

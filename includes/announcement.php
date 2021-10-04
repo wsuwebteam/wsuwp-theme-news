@@ -187,7 +187,7 @@ class Announcement {
 		wp_enqueue_style( 'jquery-ui-core', 'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' );
 
 		// Enqueue the Javascript needed to handle the form submission properly.
-		wp_enqueue_script( 'wsu-news-announcement-form', get_stylesheet_directory_uri() . '/assets/dist/js/announcements-form.js', array(), false, true );
+		wp_enqueue_script( 'wsu-news-announcement-form', get_stylesheet_directory_uri() . '/assets/dist/js/announcements-form.js', array(), Theme::get( 'version' ), true );
 
 		// Provide a global variable containing the ajax URL that we can access
 		wp_localize_script( 'wsu-news-announcement-form', 'announcementSubmission', array(
