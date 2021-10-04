@@ -86,7 +86,16 @@
 			return 0;
 		}
 
-		if ( 1050 < form_text.replace(/ /g,'').length ) {
+		form_text_chars = form_text.replace(/\s/g,'');
+
+		form_text_chars = form_text_chars.replace(/(?:\r\n|\r|\n)/g, '');
+
+		form_text_chars = form_text_chars.replace(/<\/?[^>]+(>|$)/g, '');
+
+		form_text_chars = form_text_chars.replace('&nbsp;', '');
+
+		if ( 1050 < form_text_chars.length ) {
+			console.log( form_text_chars );
 			window.alert( "Please shorten the text for the announcement to 1050 characters." );
 			return 0;
 		}
@@ -126,7 +135,7 @@
 		'keyup',
 		function(){
 
-			let chars = $(this).val().replace(/ /g,'').length;
+			let chars = $(this).val().replace(/\s/g,'').length;
 
 			if ( 90 < chars && 110 > chars ) {
 

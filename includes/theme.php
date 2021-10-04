@@ -32,6 +32,7 @@ class Theme {
 		require_once __DIR__ . '/content-defaults.php';
 		require_once __DIR__ . '/announcement.php';
 		require_once __DIR__ . '/shortcodes.php';
+		require_once __DIR__ . '/templates.php';
 
 		// Added from https://github.com/washingtonstateuniversity/news.wsu.edu-internal/blob/master/includes/content-syndicate.php
 		require_once __DIR__ . '/content-syndicate.php';
