@@ -1,10 +1,9 @@
-<?php
-
-$image_src_array = wp_get_attachment_image_src( $image_id, 'medium' );
-$image_src      = ( is_array( $image_src_array ) ) ? $image_src_array[0] : $image_src_array;
-?>
 <article class="wsu-news-card">
-    <?php if ( has_post_thumbnail() ) : $image_id = get_post_thumbnail_id(); ?>
+    <?php if ( has_post_thumbnail() ) : 
+        $image_id        = get_post_thumbnail_id();
+        $image_src_array = wp_get_attachment_image_src( $image_id, 'medium' );
+        $image_src       = ( is_array( $image_src_array ) ) ? $image_src_array[0] : $image_src_array;
+        ?>
     <div class="wsu-image-frame wsu-ratio--4-3">
         <?php if ( ! empty( $args['link'] ) ) :?><a href="<?php echo esc_url( get_post_permalink() ); ?>"><?php endif; ?>
         <img src="<?php echo esc_url( $image_src ); ?>"
