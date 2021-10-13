@@ -5,7 +5,7 @@
  Author:       Washington State University, Danial Bleile
  Author URI:   http://web.wsu.edu
  Template:     wsuwp-theme-web-design-system-two
- Version:      1.0.9.1
+ Version:      1.0.10
  Text Domain:  wsuwpthemenews
 */
 .wsu-wrapper-content {
@@ -803,6 +803,25 @@ h1::after {
     margin-right: 1.5rem;
     justify-content: flex-end;
     color: #4d4d4d; }
+
+.wsu-card-wrapper__title {
+  color: #A60F2D;
+  border-bottom: 1px solid gray;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.75rem;
+  padding-bottom: 0.6875rem;
+  margin-bottom: 1.5rem !important; }
+
+.wsu-card-wrapper .wsu-button {
+  display: block;
+  background-color: #fff; }
+
+.wsu-row--quarters .wsu-card-wrapper--per-row-2 .wsu-card {
+  width: calc(100% - (.875rem * 2)) !important; }
+
+.wsu-row--quarters .wsu-card-wrapper--per-row-2 .wsu-card--news:nth-child(5) {
+  display: none; }
 
 .wsu-news-article .wsu-callout {
   margin-top: 4rem; }

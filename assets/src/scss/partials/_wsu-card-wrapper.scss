@@ -1,0 +1,30 @@
+.wsu-card-wrapper {
+    
+    &__title {
+        color: $wsu-color--crimson;
+        border-bottom: 1px solid $wsu-color--gray-50;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.75rem;
+        padding-bottom: $wsu-spacing--xxsmall;
+        margin-bottom: $wsu-spacing--medium !important;
+    }
+
+    .wsu-button {
+        display: block;
+        background-color: #fff;
+    }
+
+}
+
+.wsu-row--quarters {
+
+    .wsu-card-wrapper--per-row-2 .wsu-card {
+        width: calc(100% - (.875rem * 2) ) !important;
+    }
+
+    .wsu-card-wrapper--per-row-2 .wsu-card--news:nth-child(5) {
+        display: none;
+    }
+
+}
