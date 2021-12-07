@@ -3,7 +3,7 @@ $news_query = new \WP_Query(
 	array(
 		'post_type' => 'news_article',
 		'posts_per_page' => 5,
-		'post__in' => array(217848,217893,217764,217983,218072,218030),
+		'post__in' => array(193590,221475,221348,207122,221409),
 		'orderby' => 'post__in',
 		)
 	);
