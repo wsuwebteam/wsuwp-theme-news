@@ -98,9 +98,9 @@
 
 		console.log( form_text_chars.length );
 
-		if ( 1050 < form_text_chars.length ) {
+		if ( 1250 < form_text_chars.length ) {
 			console.log( form_text_chars );
-			window.alert( "Please shorten the text for the announcement to 1050 characters." );
+			window.alert( "Please shorten the text for the announcement to 1250 characters." );
 			return 0;
 		}
 
@@ -167,11 +167,11 @@
 				function(){
 					let chars = $(this).text().replace(/ /g,'').length;
 
-					if ( 950 < chars && 1050 > chars ) {
+					if ( 950 < chars && 1250 > chars ) {
 
 						$('#announcement-form-text--limit').addClass('character-limit-close');
 
-					} else if ( 1050 < chars ) {
+					} else if ( 1250 < chars ) {
 
 						$('#announcement-form-text--limit').addClass('character-limit-over');
 
@@ -181,7 +181,7 @@
 
 					}
 
-					$('#announcement-form-text--limit').text( ( 1050 - chars ) );
+					$('#announcement-form-text--limit').text( ( 1250 - chars ) );
 				}
 			)
 		}, 3000

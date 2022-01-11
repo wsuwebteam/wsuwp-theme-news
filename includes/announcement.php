@@ -249,7 +249,7 @@ class Announcement {
 				);
 				wp_editor( '', 'announcement-form-text', $editor_settings );
 				?>
-				<div class="announcements-helper-text"><strong>1050 character limit</strong> | characters remaining: <span id="announcement-form-text--limit">1050</span></div>
+				<div class="announcements-helper-text"><strong>1250 character limit</strong> | characters remaining: <span id="announcement-form-text--limit">1250</span></div>
 				<p>
 					<label for="announcement-form-date">What date should this announcement be published on?</label>
 					<input type="text" id="announcement-form-date" class="announcement-form-input announcement-form-date-input" name="announcement-date" value="" />
