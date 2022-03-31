@@ -1,9 +1,9 @@
 <?php
 $news_query = new \WP_Query(
 	array(
-		'post_type' => 'news_article',
+		'post_type' => 'any',
 		'posts_per_page' => 5,
-		'post__in' => array(222838,222650,222868,222633,207122),
+		'post__in' => array(223719,224069,224045,224009),
 		'orderby' => 'post__in',
 		)
 	);
