@@ -18,7 +18,7 @@ class Announcement {
 		'taxonomies'    => array( 'post_tag', 'category', 'wsuwp_university_location', 'wsuwp_university_org', 'wsuwp_university_category' ),
 		'menu_position' => 8,
 		'menu_icon'     => 'dashicons-megaphone',
-		'supports'      => array( 'title', 'editor', 'custom-fields'),
+		'supports'      => array( 'title', 'editor', 'custom-fields', 'revisions' ),
 	);
 
 	public static function init() {
