@@ -1,19 +1,23 @@
-<?php
-$news_query = new \WP_Query(
-	array(
-		'post_type' => 'any',
-		'posts_per_page' => 5,
-		'post__in' => array(223719,224069,224045,224009),
-		'orderby' => 'post__in',
-		)
-	);
+<div class="wsu-callout wsu-news-callout">
+        
 
-while ( $news_query->have_posts() ) {
+<h2 style="margin-bottom:1rem;">WSU-related <strong>Podcasts</strong></h2>
 
-	$news_query->the_post();
+<img src="https://s3.wp.wsu.edu/uploads/sites/2797/2022/05/podcast-icon.png" width="70" style="margin:0 2rem 1rem 2rem;">
 
-	WSUWP\Theme\WDS\Template::render( 'template-parts/news-card-titles', get_post_type() );
+<article class="wsu-news-card">
+    <div class="wsu-news-card__content">
+<strong class="">From WSU:</strong>
+<p><em>Food safety, WSU stories, science answers for kids, and more—listen to podcasts from Washington State University.</em>
+</p>
 
-};
+<strong>About WSU:</strong>
+<p><em>A selection of programs about Washington State, produced by alumni and friends.
+</em></p>
 
-wp_reset_postdata();
+    <a href="https://news.wsu.edu/wsu-podcasts/" class="wsu-button">WSU Podcasts</a>
+
+</div></article>
+
+
+</div>
