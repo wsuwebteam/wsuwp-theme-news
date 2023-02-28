@@ -345,8 +345,8 @@ class Announcement {
 
 		update_post_meta( $post_id, 'announcement_author', $author ); 
 		
-		$subject = 'Announcement Submitted for ' . $post_date;
-		$body = 'Your announcement has been submitted:<br />' . stripslashes( $text );
+		$subject = 'Announcement Submitted for ' . $post_date . '|' . stripslashes( $title);
+		$body = 'Thank you for using WSU Announcements!';
 		$headers = array('Content-Type: text/html; charset=UTF-8');
 
 		wp_mail( $email, $subject, $body , $headers );
