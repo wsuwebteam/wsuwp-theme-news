@@ -346,10 +346,10 @@ class Announcement {
 		update_post_meta( $post_id, 'announcement_author', $author ); 
 		
 		$subject = 'Announcement Submitted for ' . $post_date;
-		$body = 'Your announcement has been submitted:<br />' . $text;
+		$body = 'Your announcement has been submitted:<br />' . stripslashes( $text );
 		$headers = array('Content-Type: text/html; charset=UTF-8');
 
-		wp_mail( $email, $subject, $body, $headers );
+		wp_mail( $email, $subject, $body , $headers );
 
 		echo 'success';
 		exit;
