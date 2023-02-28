@@ -343,9 +343,7 @@ class Announcement {
 
 		update_post_meta( $post_id, '_announcement_contact_email', $email );
 
-		update_post_meta( $post_id, 'announcement_author', $author );
-		
-		$email_text = 
+		update_post_meta( $post_id, 'announcement_author', $author ); 
 		
 		$subject = 'Announcement Submitted for ' . $post_date;
 		$body = 'Your announcement has been submitted:<br />' . $text;
