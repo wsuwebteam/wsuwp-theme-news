@@ -345,7 +345,7 @@ class Announcement {
 
 		update_post_meta( $post_id, 'announcement_author', $author ); 
 		
-		$email_date = date( 'd/m/Y', strtotime( $_POST['date'] ) );
+		$email_date = date( 'm/d/Y', strtotime( $_POST['date'] ) );
 		
 		$subject = 'Announcement Submitted for ' . $email_date . ' | ' . stripslashes( $title);
 		$body = 'Thank you for using WSU Announcements!';
